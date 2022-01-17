@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #282c34;
 }
 
 .App-logo {
@@ -12,20 +13,60 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+ul {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 12px;
   color: white;
+  margin: 0 auto;
+  width: 1000px;
+  overflow: auto;
 }
+
 
 .App-link {
   color: #61dafb;
+}
+.FriendList-Item {
+  cursor:pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-style: ridge;
+  border-radius: 2px;
+  border-color: gray;
+  
+}
+
+.FriendList-Item-Selected {
+  cursor:pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-style: solid;
+  border-radius: 2px;
+  border-color: green;
+}
+
+.FriendList-Item-Disabled {
+  pointer-events: none;
+  opacity: 0.7;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-style: ridge;
+  border-radius: 2px;
+  border-color: gray;
+  
 }
 
 @keyframes App-logo-spin {

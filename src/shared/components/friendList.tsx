@@ -36,11 +36,10 @@ const FriendList: React.FC<Iprops> = ({
             }
             onClick={() => setSelectedFriends(handleClick(f.steamid))}
           >
-            <img alt="" src={f.avatarmedium} />
+            <img alt="" className="Round-Border" src={f.avatarfull} />
 
             <p>{f.personaname} &nbsp; </p>
           </div>
-          <p>Last seen online: {date.toLocaleString("sv-SE")}</p>
         </li>
       );
     });

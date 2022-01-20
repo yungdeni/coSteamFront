@@ -7,7 +7,7 @@ import { IFriend } from "./shared/interfaces/friend.interface";
 import { IGame } from "./shared/interfaces/game.interface";
 import axios from "axios";
 import GameList from "./shared/components/gameList";
-import { Button, Form, Card, Container } from "react-bootstrap";
+import { Button, Form, Container } from "react-bootstrap";
 
 function App() {
   async function get<T>(path: string): Promise<T> {
@@ -39,12 +39,9 @@ function App() {
   };
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
+    setGames([]);
     getFriends(steamid);
   };
-
-  // useEffect(() => {
-  //   getFriends("76561198002549124")
-  // }, [])
 
   return (
     <div className="App">
@@ -72,7 +69,6 @@ function App() {
             setSelectedFriends={setSelectedFriends}
             friends={friends}
           />
-
           {selectedFriends.length > 0 && (
             <Button
               variant="secondary"

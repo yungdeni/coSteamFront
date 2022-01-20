@@ -1,6 +1,5 @@
 import React from "react";
 import { IGame as Props } from "../interfaces/game.interface";
-import { Card, Button } from "react-bootstrap";
 
 interface Iprops {
   games: Props["games"];

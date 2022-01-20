@@ -17,17 +17,20 @@ ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  list-style-type: none;
 }
 
 body {
   background-color: #282c34;
+
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
-.FriendsUL {
-  list-style-type: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-}
 .App-header {
   background-color: #282c34;
   min-height: 40vh;
@@ -47,22 +50,29 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.Header-Text {
+  color: white;
+}
 .App-link {
   color: #61dafb;
 }
 .FriendList-Item {
   cursor: pointer;
   display: flex;
-  color: black;
   flex-direction: column;
+  color: white;
+  border-style: solid;
   align-items: center;
-  border-style: ridge;
-  border-radius: 2px;
-  border-color: white;
+  background-color: black;
+  border-radius: 5px;
+  margin: 5px;
+  background-image: linear-gradient(to right, black, rgba(19, 8, 8, 0.726));
 }
 
-.Header-Text {
-  color: white;
+.Round-Border {
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
 }
 
 .FriendList-Item-Selected {
@@ -74,20 +84,19 @@ body {
   border-style: solid;
   border-radius: 2px;
   background-color: green;
+  margin: 5px;
 }
 
 .FriendList-Item-Disabled {
   pointer-events: none;
   opacity: 0.7;
   display: flex;
+  background-color: grey;
   flex-direction: column;
   align-items: center;
   border-style: ridge;
   border-radius: 2px;
-  border-color: red;
-}
-
-.GameList-Items {
+  margin: 5px;
 }
 
 @keyframes App-logo-spin {

@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import FriendList from "./shared/components/friendList";
 import { useState } from "react";
-import { useEffect } from "react";
 import "./App.css";
 import { IFriend } from "./shared/interfaces/friend.interface";
 import { IGame } from "./shared/interfaces/game.interface";
@@ -19,6 +18,7 @@ function App() {
   const [selectedFriends, setSelectedFriends] = useState<string[]>([]);
   const [steamid, setSteamid] = useState<string>("");
   const [games, setGames] = useState<IGame["games"]>([]);
+  const gameRef = React.useRef<HTMLDivElement>(null);
 
   const getFriends = async (steamid: string) => {
     console.log("get");
@@ -36,12 +36,22 @@ function App() {
     );
     console.log(results);
     setGames(results);
+
+
   };
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
     setGames([]);
     getFriends(steamid);
   };
+  useEffect(() => {
+    if (gameRef.current){
+      gameRef.current.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  }, [games])
+
 
   return (
     <div className="App">
@@ -77,7 +87,11 @@ function App() {
               Get common games
             </Button>
           )}
+          <div ref={gameRef}>
           <GameList games={games}></GameList>
+          </div>
+          
+
         </div>
       </Container>
     </div>

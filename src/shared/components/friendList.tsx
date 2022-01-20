@@ -1,6 +1,6 @@
 import React from "react";
 import { IFriend as Props } from "../interfaces/friend.interface";
-import { Card, Button } from "react-bootstrap";
+
 
 interface Iprops {
   friends: Props["friends"];
@@ -22,8 +22,6 @@ const FriendList: React.FC<Iprops> = ({
 
   const renderList = () => {
     return friends.map((f) => {
-      const date = new Date(f.lastlogoff * 1000);
-
       return (
         <li key={f.steamid}>
           <div

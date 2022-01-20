@@ -45,7 +45,7 @@ function App() {
     getFriends(steamid);
   };
   useEffect(() => {
-    if (gameRef.current){
+    if (gameRef.current && games.length){
       gameRef.current.scrollIntoView({
         behavior: "smooth",
       });
